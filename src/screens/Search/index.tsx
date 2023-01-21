@@ -1,5 +1,5 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
-import React from "react";
+
 import { View, Text, Button, TouchableOpacity } from "react-native";
 
 type ParamsProps = {

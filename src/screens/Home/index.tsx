@@ -1,5 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, TouchableOpacity } from "react-native";
+import AnimatedLottieView from "lottie-react-native";
+
+import * as S from "./styles";
+import githubAnimate from "./github.json";
+import { Button } from "../../components/Button";
 
 export function Home() {
   const navigation = useNavigation();
@@ -9,42 +13,22 @@ export function Home() {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#000",
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
-      <Text
-        style={{
-          color: "#fff",
-          fontSize: 20,
-        }}
-      >
-        Home
-      </Text>
-      <TouchableOpacity
-        style={{
-          backgroundColor: "#100c33",
-          width: 200,
-          height: 50,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 10,
-          marginTop: 20,
-        }}
-        onPress={openSearch}
-      >
-        <Text
-          style={{
-            color: "#fff",
-            fontSize: 20,
-          }}
-        >
-          Login
-        </Text>
-      </TouchableOpacity>
-    </View>
+    <S.Container>
+      <S.Content>
+        <AnimatedLottieView source={githubAnimate} autoPlay loop />
+      </S.Content>
+      <S.Footer>
+        <S.Title>
+          Bem-vindo
+        </S.Title>
+        <S.Subtitle>
+          à Pesquisa do Github
+        </S.Subtitle>
+        <Button
+          title="Entrar"
+          onPress={openSearch}
+        />
+      </S.Footer>
+    </S.Container>
   );
 }
