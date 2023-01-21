@@ -20,7 +20,7 @@ export function StackRoutes() {
           title: "Pesquisar perfil no Github",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "navy",
+            backgroundColor: "#100c33",
           },
           headerTintColor: "#fff",
         }}
@@ -32,7 +32,7 @@ export function StackRoutes() {
           title: "Repositórios",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "navy",
+            backgroundColor: "#100c33",
           },
           headerTintColor: "#fff",
         }}

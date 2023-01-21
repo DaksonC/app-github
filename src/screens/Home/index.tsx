@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Button } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 export function Home() {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ export function Home() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#100c33",
+        backgroundColor: "#000",
         justifyContent: "center",
         alignItems: "center"
       }}>
@@ -24,7 +24,27 @@ export function Home() {
       >
         Home
       </Text>
-      <Button title="Search" onPress={openSearch} />
+      <TouchableOpacity
+        style={{
+          backgroundColor: "#100c33",
+          width: 200,
+          height: 50,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 10,
+          marginTop: 20,
+        }}
+        onPress={openSearch}
+      >
+        <Text
+          style={{
+            color: "#fff",
+            fontSize: 20,
+          }}
+        >
+          Login
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }

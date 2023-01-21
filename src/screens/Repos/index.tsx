@@ -18,14 +18,14 @@ export function Repos() {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <Text style={{
-        color: "#fff",
-        fontSize: 20,
-      }}>Nome: {name}</Text>
-      <Text style={{
-        color: "#535151",
-        fontSize: 15,
-      }}>Idade: {age}</Text>
+      <Text
+        style={{
+          color: "#535151",
+          fontSize: 15,
+        }}
+      >
+        Idade: {age}
+      </Text>
     </View>
   );
 }

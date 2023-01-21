@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, TouchableOpacity } from "react-native";
 
 type ParamsProps = {
   age: string;
@@ -21,7 +21,7 @@ export function Search() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#100c33",
+        backgroundColor: "#000",
         justifyContent: "center",
         alignItems: "center"
       }}
@@ -50,7 +50,27 @@ export function Search() {
       >
         Idade: {age}
       </Text>
-      <Button title="Repos" onPress={openRepos} />
+      <TouchableOpacity
+        style={{
+          backgroundColor: "#100c33",
+          width: 200,
+          height: 50,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 10,
+          marginTop: 20,
+        }}
+        onPress={openRepos}
+      >
+        <Text
+          style={{
+            color: "#fff",
+            fontSize: 20,
+          }}
+        >
+          Login
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
