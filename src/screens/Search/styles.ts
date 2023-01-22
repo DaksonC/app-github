@@ -13,7 +13,6 @@ export const Header = styled.View`
     width: 100%;
     height: 70px;
     padding: 0 24px;
-    margin-top: 20px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -64,12 +63,20 @@ export const ProfileContent = styled.View`
 `;
 
 export const ProfileImage = styled.Image`
-    width: 80px;
-    height: 80px;
-    margin: 8px;
-    border-radius: 50px;
-    align-self: center;
-  `;
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  border-radius: 50px;
+  align-self: center;
+`;
+
+export const ImageGithub = styled.Image`
+  width: 280px;
+  height: 280px;
+  margin: 8px;
+  border-radius: 50px;
+  align-self: center;
+`;
 
 export const ProfileName = styled.Text`
   ${({ theme }) => css`
@@ -78,6 +85,54 @@ export const ProfileName = styled.Text`
     margin: 5px;
     color: ${theme.colors.title};
   `};
+`;
+
+export const ProfileViewLocation = styled.View`
+  ${({ theme }) => css`
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: ${theme.colors.gray_500};
+  `}
+`;
+
+export const ProfileTextLocation = styled.Text`
+  ${({ theme }) => css`
+    font-size: 14px;
+    margin:  0 5px;
+    padding-bottom: 10px;
+    color: ${theme.colors.text};
+  `}
+`;
+
+export const ViewTextIHavenCreatedMyBioYet = styled.View`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.gray_500};
+  `}
+`;
+
+export const TextIHavenCreatedMyBioYet = styled.Text`
+  ${({ theme }) => css`
+    margin-top: 10px;
+    color: ${theme.colors.attention};
+  `};
+`;
+
+export const ProfileViewBio = styled.View`
+  ${({ theme }) => css`
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: ${theme.colors.gray_500};
+  `}
+`;
+
+export const ProfileTextBio = styled.Text`
+  ${({ theme }) => css`
+    font-size: 14px;
+    margin: 0 5px 5px;
+    color: ${theme.colors.text};
+  `}
 `;
 
 export const ProfileDetail = styled.TouchableOpacity`

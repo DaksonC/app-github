@@ -44,9 +44,17 @@ export function Repos() {
         <S.ViewTextDescription>
           <S.TextDescription>{item.description}</S.TextDescription>
         </S.ViewTextDescription>
-        <S.ViewTextLanguage>
-          <S.TextLanguage>{item.language}</S.TextLanguage>
-        </S.ViewTextLanguage>
+        {item.language === null ? (
+          <S.ViewTextDidNotFindTheLink>
+            <S.TextDidNotFindTheLink>
+              ⚠️ Linguagem não encontrada
+            </S.TextDidNotFindTheLink>
+          </S.ViewTextDidNotFindTheLink>
+        ) : (
+          <S.ViewTextLanguage>
+            <S.TextLanguage>{item.language}</S.TextLanguage>
+          </S.ViewTextLanguage>
+        )}
         <S.LinkRepo onPress={() => {
           Linking.openURL(item.html_url);
         }}>

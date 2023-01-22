@@ -22,7 +22,7 @@ export const ViewTextName = styled.View``;
 
 export const TextName = styled.Text`
   ${({ theme }) => css`
-    font-size: 20px;
+    font-size: 28px;
     color: ${theme.colors.secondary};
   `};
 `;
@@ -33,6 +33,7 @@ export const ViewTextDescription = styled.View`
 
 export const TextDescription = styled.Text`
   ${({ theme }) => css`
+    font-size: 18px;
     color: ${theme.colors.text};
   `};
 `;
@@ -50,7 +51,15 @@ export const TextLanguage = styled.Text`
     text-align: center;
     color: ${theme.colors.text};
     background-color: ${theme.colors.gray_700};
+  `};
+`;
 
+export const ViewTextDidNotFindTheLink = styled.View``;
+
+export const TextDidNotFindTheLink = styled.Text`
+  ${({ theme }) => css`
+    margin-top: 10px;
+    color: ${theme.colors.attention};
   `};
 `;
 
