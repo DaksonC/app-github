@@ -92,6 +92,35 @@ export const ProfileDetail = styled.TouchableOpacity`
   `}
 `;
 
+export const ProfileDeashboard = styled.View`
+  ${({ theme }) => css`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  `}
+`;
+
+export const ProfileLabelItem = styled.Text`
+  ${({ theme }) => css`
+    font-size: 12px;
+    color: ${theme.colors.text};
+    font-weight: bold;
+  `}
+`;
+
+export const ProfileViewDeashboardItem = styled.View`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ProfileDeashboardItem = styled.Text`
+  ${({ theme }) => css`
+    font-size: 20px;
+    color: ${theme.colors.shape};
+  `}
+`;
+
 export const ProfileDetailText = styled.Text`
   ${({ theme }) => css`
     font-size: 18px;

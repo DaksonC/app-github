@@ -2,7 +2,10 @@ export default {
   colors: {
     primary: '#5636D3',
     secondary: '#FF872C',
+    terciary: '#383a59',
+
     background: '#100c33',
+    background_secondary: '#1b2565',
 
     success: '#12A454',
     attention: '#E83F5B',
