@@ -1,76 +1,54 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useEffect, useState } from "react";
+import { FlatList } from "react-native";
 
-import { View, Text, Button, TouchableOpacity } from "react-native";
+import * as S from "./styles";
+import api from "../../service/api";
+import { Button } from "../../components/Button";
 
-type ParamsProps = {
-  age: string;
+
+interface IUserResponse {
+  id: number;
   name: string;
-};
+  avatar_url: string;
+}
 
 export function Search() {
-  const route = useRoute();
-  const { age, name } = route.params as ParamsProps;
+  const [search, SetSearch] = useState('');
+  const [name, setName] = useState('GitHub');
+  const [avatar, setAvatar] = useState(
+    'https://user-images.githubusercontent.com/81385265/213897956-4e8951ae-af75-41b0-87e6-02a1f30b0364.png'
+  );
 
-  const navigation = useNavigation();
-
-  function openRepos() {
-    navigation.navigate("Repos", { age: "39" });
+  async function handleSearch() {
+    await api.get<IUserResponse>(`users/${search}`)
+      .then((response) => {
+        setName(response.data.name);
+        setAvatar(response.data.avatar_url);
+      });
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#000",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
-      <Text
-        style={{
-          color: "#fff",
-          fontSize: 30,
-        }}
-      >
-        Search
-      </Text>
-      <Text
-        style={{
-          color: "#fff",
-          fontSize: 20,
-        }}
-      >
-        Nome: {name}
-      </Text>
-      <Text
-        style={{
-          color: "#535151",
-          fontSize: 15,
-        }}
-      >
-        Idade: {age}
-      </Text>
-      <TouchableOpacity
-        style={{
-          backgroundColor: "#100c33",
-          width: 200,
-          height: 50,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 10,
-          marginTop: 20,
-        }}
-        onPress={openRepos}
-      >
-        <Text
-          style={{
-            color: "#fff",
-            fontSize: 20,
-          }}
-        >
-          Login
-        </Text>
-      </TouchableOpacity>
-    </View>
+    <S.Container >
+      <S.Header>
+        <S.HeaderTitle>Busca</S.HeaderTitle>
+      </S.Header>
+      <S.SearchInput
+        placeholder="Digite o nome do usuário"
+        onChangeText={SetSearch}
+      />
+      <Button
+        title="Buscar"
+        onPress={handleSearch}
+      />
+      <S.ProfileContainer>
+        <S.ProfileContent>
+          <S.ProfileImage source={{ uri: avatar }} />
+          <S.ProfileName>{name}</S.ProfileName>
+        </S.ProfileContent>
+        <S.ProfileDetail>
+          <S.ProfileDetailText>Ver mais</S.ProfileDetailText>
+        </S.ProfileDetail>
+      </S.ProfileContainer>
+    </S.Container>
   );
 }

@@ -35,6 +35,7 @@ export const Title = styled.Text`
 export const Subtitle = styled.Text`
   ${({ theme }) => css`
     font-size: 18px;
+    margin-bottom: 24px;
     color: ${theme.colors.gray_200};
   `}
 `;

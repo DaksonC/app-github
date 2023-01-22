@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import AnimatedLottieView from "lottie-react-native";
 
 import * as S from "./styles";
-import githubAnimate from "./github.json";
+import githubAnimate from "../../img/github.json";
 import { Button } from "../../components/Button";
 
 export function Home() {

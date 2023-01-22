@@ -5,9 +5,9 @@ type Props = {
   title: string;
 } & TouchableOpacityProps;
 
-export function Button({ title }: Props) {
+export function Button({ title, onPress }: Props) {
   return (
-    <S.Container>
+    <S.Container onPress={onPress}>
       <S.Title>{title}</S.Title>
     </S.Container>
   );
