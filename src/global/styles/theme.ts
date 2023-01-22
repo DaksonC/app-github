@@ -8,6 +8,7 @@ export default {
     background_secondary: '#1b2565',
 
     success: '#12A454',
+    success_light: '#00FF00',
     attention: '#E83F5B',
     shape: '#FFFFFF',
     title: '#fff',

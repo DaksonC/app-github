@@ -3,12 +3,13 @@ import { useRoute } from "@react-navigation/native";
 
 import api from "../../service/api";
 import * as S from "./styles";
-import { FlatList } from "react-native";
+import { FlatList, Linking } from "react-native";
 
 interface IReposResponse {
   id: number;
   name: string;
   repos_url: string;
+  html_url: string;
   description: string;
   language: string;
 }
@@ -40,13 +41,17 @@ export function Repos() {
         <S.TextName>
           <S.TextName>{item.name}</S.TextName>
         </S.TextName>
-        <S.TextDescription>
+        <S.ViewTextDescription>
           <S.TextDescription>{item.description}</S.TextDescription>
-        </S.TextDescription>
-        <S.TextLanguage>
+        </S.ViewTextDescription>
+        <S.ViewTextLanguage>
           <S.TextLanguage>{item.language}</S.TextLanguage>
-        </S.TextLanguage>
-        <S.LinkRepo>{item.repos_url}</S.LinkRepo>
+        </S.ViewTextLanguage>
+        <S.LinkRepo onPress={() => {
+          Linking.openURL(item.html_url);
+        }}>
+          <S.TextLinkRepo>Link do repositório</S.TextLinkRepo>
+        </S.LinkRepo>
       </S.ContentRepos>
     );
   }

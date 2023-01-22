@@ -22,11 +22,14 @@ export const ViewTextName = styled.View``;
 
 export const TextName = styled.Text`
   ${({ theme }) => css`
-    color: ${theme.colors.text};
+    font-size: 20px;
+    color: ${theme.colors.secondary};
   `};
 `;
 
-export const ViewTextDescription = styled.View``;
+export const ViewTextDescription = styled.View`
+  margin-top: 10px;
+`;
 
 export const TextDescription = styled.Text`
   ${({ theme }) => css`
@@ -34,16 +37,40 @@ export const TextDescription = styled.Text`
   `};
 `;
 
-export const ViewTextLanguage = styled.View``;
+export const ViewTextLanguage = styled.View`
+  margin-top: 10px;
+`;
 
 export const TextLanguage = styled.Text`
   ${({ theme }) => css`
+    width: 100px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
     color: ${theme.colors.text};
+    background-color: ${theme.colors.gray_700};
+
   `};
 `;
 
 export const LinkRepo = styled.TouchableOpacity`
   ${({ theme }) => css`
-    background-color: ${theme.colors.gray_100};
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors.success_light};
+  `};
+`;
+
+export const TextLinkRepo = styled.Text`
+  ${({ theme }) => css`
+    font-size: 18px;
+    font-weight: bold;
+    color: ${theme.colors.gray_700};
   `};
 `;

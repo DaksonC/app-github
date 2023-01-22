@@ -9,7 +9,7 @@ export function Home() {
   const navigation = useNavigation();
 
   function openSearch() {
-    navigation.navigate("Search", { name: "Dakson" });
+    navigation.navigate("Search", { name: "" });
   }
 
   return (
