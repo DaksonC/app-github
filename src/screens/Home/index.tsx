@@ -25,7 +25,7 @@ export function Home() {
           à Pesquisa do Github
         </S.Subtitle>
         <Button
-          title="Entrar"
+          title="Entrar com o Github"
           onPress={openSearch}
         />
       </S.Footer>

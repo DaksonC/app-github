@@ -60,7 +60,7 @@ export function Search() {
         onChangeText={SetSearch}
       />
       <Button
-        title="Buscar"
+        title="Buscar perfil"
         onPress={handleSearch}
       />
       {name !== 'GitHub' ? (
@@ -102,7 +102,7 @@ export function Search() {
         </S.ProfileContainer>
       ) : (
         <S.ImageGithub source={{
-          uri: "https://user-images.githubusercontent.com/81385265/213897956-4e8951ae-af75-41b0-87e6-02a1f30b0364.png"
+          uri: "https://user-images.githubusercontent.com/81385265/213920295-e82580ac-b6f4-4430-b061-4e0461def1c9.png"
         }} />
       )
       }
