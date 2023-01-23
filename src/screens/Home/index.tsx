@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useState } from 'react';
 import * as AuthSession from 'expo-auth-session';
 import AnimatedLottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -7,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import * as S from "./styles";
 import githubAnimate from "../../img/github.json";
 import { Button } from "../../components/Button";
+import { CLIENT_ID, CLIENT_SECRET } from 'react-native-dotenv';
 
 type AuthResponse = {
   params: {
@@ -20,10 +20,8 @@ export function Home() {
 
   async function handleGitHubSignIn() {
     try {
-      const CLIENT_ID = "ea7b635ccdff0e991d7f";
       const REDIRECT_URI = "https://auth.expo.io/@daksoncruz/appgithub";
       const SCOPE = "user";
-      const CLIENT_SECRET = "14c5ab57d0ebe19b1d42d6e0dc6dfd7911b79cb2";
 
       const authUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}`;
 
