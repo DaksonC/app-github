@@ -17,11 +17,9 @@ type AuthResponse = {
 
 export function Home() {
   const navigation = useNavigation();
-  const [avatar_url, setAvatar_url] = useState<string>();
 
   async function handleGitHubSignIn() {
     try {
-      avatar_url
       const CLIENT_ID = "ea7b635ccdff0e991d7f";
       const REDIRECT_URI = "https://auth.expo.io/@daksoncruz/appgithub";
       const SCOPE = "user";
@@ -49,7 +47,6 @@ export function Home() {
           { avatar_url: USER.data.avatar_url, username: USER.data.name }
         );
 
-        console.log(USER.data);
       }
     } catch (error) {
       console.log(error);

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { FlatList, Linking } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
 import api from "../../service/api";
 import * as S from "./styles";
-import { FlatList, Linking } from "react-native";
 
 interface IReposResponse {
   id: number;

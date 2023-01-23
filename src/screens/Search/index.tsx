@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
-import { FlatList } from "react-native";
+import { useState } from "react";
 
 import * as S from "./styles";
 import api from "../../service/api";
 import { Button } from "../../components/Button";
 import { useNavigation, useRoute } from "@react-navigation/native";
-
 
 interface IUserResponse {
   id: number;
