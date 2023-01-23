@@ -37,3 +37,20 @@ Boa sorte!
 - Experiência do usuário 20%
 - Organização do código/projeto 20%
 - Realizar o objetivo do projeto 40%
+
+## Instalação e execução do projeto
+
+-          git clone https://github.com/DaksonC/appgithub.git
+-          cd appgithub
+-          npm install
+-          expo start --clear
+
+## Tecnologias
+
+- React-Native
+- TypeScript
+- Styled-Components
+- Axios
+
+## Demonstrativo
+https://user-images.githubusercontent.com/81385265/214061603-00ce44ab-5906-4c96-961d-6189b96656a2.mp4
