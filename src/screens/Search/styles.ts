@@ -20,9 +20,17 @@ export const Header = styled.View`
   `};
 `;
 
+export const HeaderAvatar = styled.Image`
+  ${({ theme }) => css`
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  `}
+`;
+
 export const HeaderTitle = styled.Text`
   ${({ theme }) => css`
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: ${theme.colors.text};
   `}

@@ -4,7 +4,7 @@ import { FlatList } from "react-native";
 import * as S from "./styles";
 import api from "../../service/api";
 import { Button } from "../../components/Button";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 
 interface IUserResponse {
@@ -18,6 +18,11 @@ interface IUserResponse {
   bio: string;
 }
 
+type ParamsProps = {
+  avatar_url: string;
+  username: string;
+}
+
 export function Search() {
   const [search, SetSearch] = useState('');
   const [name, setName] = useState('GitHub');
@@ -29,6 +34,9 @@ export function Search() {
   const [following, setFollowing] = useState<number>();
   const [location, setLocation] = useState<string>('Mundo');
   const [bio, setBio] = useState('Olá, seja bem vindo ao GitHub');
+
+  const route = useRoute();
+  const { avatar_url, username } = route.params as ParamsProps;
 
   const navigation = useNavigation();
 
@@ -53,7 +61,8 @@ export function Search() {
   return (
     <S.Container >
       <S.Header>
-        <S.HeaderTitle>Busca</S.HeaderTitle>
+        <S.HeaderAvatar source={{ uri: avatar_url }} />
+        <S.HeaderTitle>{username}</S.HeaderTitle>
       </S.Header>
       <S.SearchInput
         placeholder="Digite o nome do usuário"
