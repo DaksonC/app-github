@@ -51,6 +51,8 @@ Boa sorte!
 - TypeScript
 - Styled-Components
 - Axios
+- React-Navigation
+- AsyncStorage
 
 ## Demonstrativo
 https://user-images.githubusercontent.com/81385265/214061603-00ce44ab-5906-4c96-961d-6189b96656a2.mp4
