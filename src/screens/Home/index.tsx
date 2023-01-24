@@ -2,6 +2,7 @@ import axios from 'axios';
 import * as AuthSession from 'expo-auth-session';
 import AnimatedLottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import * as S from "./styles";
 import githubAnimate from "../../img/github.json";
@@ -41,10 +42,19 @@ export function Home() {
           },
         });
 
-        navigation.navigate("Search",
-          { avatar_url: USER.data.avatar_url, username: USER.data.name }
-        );
+        await AsyncStorage.setItem('@appgithub:token', ACCESS_TOKEN);
 
+        try {
+          const value = await AsyncStorage.getItem('@appgithub:token');
+
+          if (value === ACCESS_TOKEN || value !== undefined || value !== null) {
+            navigation.navigate("Search",
+              { avatar_url: USER.data.avatar_url, username: USER.data.name }
+            );
+          }
+        } catch (error) {
+          console.log(error);
+        }
       }
     } catch (error) {
       console.log(error);
